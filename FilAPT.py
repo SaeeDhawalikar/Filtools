@@ -15,9 +15,11 @@ import h5py
 import re
 import sys, os
 
+sys.path.append("/mnt/home/student/csaee/perl5/my_tools")
+
 # picasa
-BASE_DIR='/home/saee/Desktop/codes/picasa'
-sys.path.append('/home/saee/Desktop/codes/picasa/code')
+BASE_DIR = '/mnt/home/student/csaee/perl5/disperse/paper/picasa/'
+sys.path.append(BASE_DIR + 'code/')
 # setting up picasa
 from picasa import PICASA
 import gc
@@ -1066,7 +1068,7 @@ class SmoothSpine(ExtractProfiles):
                 pnew=F_pinter(d_in)
                 # getting the radius
                 D1=self.estimate_profile(Pos, pnew, rmin, rmax, N_r=N_r, N_z=N_z, N_phi=N_phi, log=True, Vel=None,
-                         sort=sort, Num_cum=Num_cim, Num_W=Num_W, bin_in_phi=False)
+                         sort=sort, Num_cum=Num_cum, Num_W=Num_W, bin_in_phi=False)
 
 
                 rho_r=D1["rho_r"]
@@ -1129,7 +1131,7 @@ class SmoothSpine(ExtractProfiles):
         spine01=self.apply_rth(data, k01, s01)
         # getting the radius
         D1=self.estimate_profile(Pos, spine01, rmin, rmax, N_r=N_r, N_z=N_z, N_phi=N_phi, log=True, Vel=None,
-                         sort=sort, Num_cum=Num_cim, Num_W=Num_W, bin_in_phi=False)
+                         sort=sort, Num_cum=Num_cum, Num_W=Num_W, bin_in_phi=False)
         rho_r=D1["rho_r"]
         rho_z=D1["rho_z"]
         rmid=D1["rmid"]
@@ -1232,7 +1234,7 @@ class SmoothSpine(ExtractProfiles):
                 pnew=self.nei_smooth(Pf, Nsm)
                 # getting the radius
                 D1=self.estimate_profile(Pos, pnew, rmin, rmax, N_r=N_r, N_z=N_z, N_phi=N_phi, log=True, Vel=None,
-                         sort=sort, Num_cum=Num_cim, Num_W=Num_W, bin_in_phi=False)
+                         sort=sort, Num_cum=Num_cum, Num_W=Num_W, bin_in_phi=False)
                 
                 rho_r=D1["rho_r"]
                 rho_z=D1["rho_z"]
@@ -1294,7 +1296,7 @@ class SmoothSpine(ExtractProfiles):
         spine01=self.nei_smooth(P, Nsm1)
         # getting the radius
         D1=self.estimate_profile(Pos, spine01, rmin, rmax, N_r=N_r, N_z=N_z, N_phi=N_phi, log=True, Vel=None,
-                         sort=sort, Num_cum=Num_cim, Num_W=Num_W, bin_in_phi=False)
+                         sort=sort, Num_cum=Num_cum, Num_W=Num_W, bin_in_phi=False)
 
         rho_r=D1["rho_r"]
         rho_z=D1["rho_z"]
