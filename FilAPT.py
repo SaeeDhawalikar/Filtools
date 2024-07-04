@@ -15,10 +15,8 @@ import h5py
 import re
 import sys, os
 
-sys.path.append("/mnt/home/student/csaee/perl5/my_tools")
-
 # picasa
-BASE_DIR = '/mnt/home/student/csaee/perl5/disperse/paper/picasa/'
+BASE_DIR = 'picasa/' # change this path if needed
 sys.path.append(BASE_DIR + 'code/')
 # setting up picasa
 from picasa import PICASA
