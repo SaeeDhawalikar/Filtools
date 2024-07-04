@@ -911,7 +911,7 @@ class SmoothSpine(ExtractProfiles):
             else:
                 Perr_l=P_inter[1:len(dl_pad)+1]-P_inter[0]
                 Pl=np.flip(P_inter[0]-Perr_l, axis=0)
-                Perr_h=P_inter[-len(dh_pad)-2:-1]-P_inter[-1]
+                Perr_h=P_inter[-len(dh_pad)-1:-1]-P_inter[-1]
                 Ph=np.flip(P_inter[-1]-Perr_h, axis=0)
                 
             Ppad=np.concatenate([Pl, P_inter, Ph], axis=0)
