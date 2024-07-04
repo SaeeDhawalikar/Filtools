@@ -1,0 +1,23 @@
+03 April 2023
+-- Added new package gpr_train with class GPRTrainer outside PICASA (needs ASAUtilities())
+
+16 Nov 2022
+-- Added kwarg 'max_samples' in ASAUtilities.create_info_dict(), now used in GPR training to truncate chains.
+
+03 Nov 2022
+-- Changed last iteration sampling to reflect multi-dimensional Gaussian expectation.
+-- Added optional key 'C_sig', value >= 1.0 (default 1.0), to approximate scaling between actual 1-d widths and Gaussian expectation for last iterations setup. 'C_sig' is passed as new kwarg to ASA_Utilities.asa_chi2min().
+-- Changed interpretation of key 'last_frac'. This is now the ratio of the sum over all last iterations and the total PICASA count: 'last_frac' = N_all_last_iters / N_PICASA = N_all_last_iters / (N_all_last_iters + N_minimiser_mode). Default value is now 0.5.
+-- Added optional key 'mcmc_prior' to control MCMC priors.
+-- Modified optimization call in PICASA.mcmc() to use evaluated minimum instead of estimated best fit for restarts.
+
+25 Aug 2022
+-- Added optional key 'max_gpr_iter' to control maximum number of GPR training iterations.
+-- Changed starting Nsamp_hyper from 50 to 30 in PICASA.gpr_train_and_run() to speed up GPR training. 
+-- Changed multiplicative increments in Nsamp_hyper, train_size and bound_fac each to 1.1. 
+-- Optional key 'rng' now also passed to GPR training.
+-- Modified output of ASALike.logp() to return -np.inf when interpolated chi2 < 0.  Since np.exp(-np.inf) = 0.0, this ensures likelihood = 0.0 for such cases.
+-- Added optional key 'Rminus1_cl_stop' to control convergence of bounds of 95% region when running MCMC.
+
+23 Aug 2022
+-- Fixed bug in output of training set. No effect on analysis.

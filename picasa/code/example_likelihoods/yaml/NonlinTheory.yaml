@@ -1,0 +1,2 @@
+data_file: ../../examples/standard-MCMC/nonlin_data_default.txt
+ftype: 1 # 1 or 2

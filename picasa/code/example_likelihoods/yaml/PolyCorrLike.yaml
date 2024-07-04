@@ -1,0 +1,2 @@
+data_file: ../../examples/standard-MCMC/polycorr_data_default.txt
+cov_file: ../../examples/standard-MCMC/polycorr_cov_default.txt

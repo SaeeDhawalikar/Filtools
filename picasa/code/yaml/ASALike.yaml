@@ -1,0 +1,14 @@
+data_file: asa_data_default.txt
+base_dir: None
+tmp_dir: None
+logfile: None
+rotate: None
+estimate: gpr # gpr, rbf
+kernel: rbf # if estimate==gpr, use rq, rbf or matern. if estimate==rbf, use gaussian or cubic
+kernel_start: None # None or list of floats
+skip_train: False # if True, kernel_start must be valid list of hyperparameters
+bound_fac: 10.0 # parameter deciding starting hyperparameter range for GPR training 
+Nsamp_hyper: 50 # ASA Nsamp for GPR hyperparameter exploration
+verbose: False
+rng: None
+train_size: None # None or integer number of samples to be used for training GPR.
